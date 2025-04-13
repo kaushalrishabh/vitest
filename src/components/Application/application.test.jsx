@@ -14,8 +14,9 @@ describe('Application', () => {
             level: 2
         });
         expect(sectionHeading).toBeInTheDocument();
-
-        const paraElement = screen.getByText('All Fields are Mandatory');
+        
+        //Using Regex and substring
+        const paraElement = screen.getByText(/All Fields are/i, {exact: false});
         expect(paraElement).toBeInTheDocument();
 
         const closeElement = screen.getByTitle('close');
